@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+</head>
+<body>
+
+<div class="container">
+    <div th:fragment="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" th:href="@{/products}">All Products</a></li>
+                        <li><a href="#" th:href="@{/product/new}">Create Product</a></li>
+                    </ul>
+					<form  th:action="@{/search}" method="post">
+                        	<input type="text" th:value="${content}" name="content"/>
+                        	<button type="submit">Search Products</button>
+                        </form>
+                </div>
+                
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <div class="row text-center">
+                <div class="">
+                    <h2>XDSB Products List</h2>
+
+                </div>
+            </div>
+            <!-- 
+            <div class="row text-center">
+                <img src="../../static/images/test1.jpg" width="400"
+                     th:src="@{/images/test1.jpg}"/>
+            </div>
+             -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
